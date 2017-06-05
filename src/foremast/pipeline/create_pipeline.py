@@ -184,7 +184,7 @@ class SpinnakerPipeline:
         pipelines = self.get_existing_pipelines()
         pipeline_id = None
         for pipeline in pipelines:
-            if (pipeline['application'] == self.app_name):
+            if (pipeline['application'] == self.app_name and (region in pipeline['name'])):
                 self.log.info('Existing pipeline found - %s', pipeline['name'])
                 pipeline_id = pipeline['id']
                 break
